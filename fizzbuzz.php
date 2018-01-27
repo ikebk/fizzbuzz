@@ -44,9 +44,7 @@ function fizz($num) {
 }
 
 $results = array_map(function($num) {
-  $arr = [];
-  $arr[] = fizz($num);
-  $arr[] = buzz($num);
+  $arr = [fizz($num), buzz($num)];
   return array_filter($arr)? implode('',$arr) : $num;
 }, $number_set);
 
